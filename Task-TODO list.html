@@ -1,0 +1,99 @@
+<style>
+    #color{
+        background-color: aqua;
+        width: 100%;
+        text-align: center;
+    }
+
+
+</style>
+
+
+
+<center>
+
+<table border="2" id="studentform">
+    <tr >
+        <td> Name </td>
+        <td> <input type="text" id="name"> </td>
+    </tr>
+    <tr >
+        <td> Age </td>
+        <td> <input type="number" id="age"> </td>
+    </tr>
+    <tr >
+        <td> Gender </td>
+        <td > <input type="radio"  name="gender" value="Male" > Male
+              <input type="radio"  name="gender" value="Female" > Female
+            
+        </td>
+    </tr>
+    <tr >
+        <td > Course </td>
+        <td >
+            <select  id="course" style="width: 100%;" >
+                <option value="Course">Course</option>
+                <option value="Python">Python</option>
+                <option value="Web Devlopment">Web Devlopment</option>
+                <option value="Softwer devloper">Softwer devloper</option>
+            </select>
+        </td>
+    </tr>
+    <tr >
+        <td > E-mail </td>
+        <td> <input type="mail" id="mail"> </td>
+    </tr>
+    <tr >
+       <td colspan="2">  <button id="color" onclick="save(event)">Save</button> </td> 
+    </tr>
+
+</table>
+</center>
+<center>
+    <div >
+    <table border="5" id="studenttable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Mail</th>
+            <th>More</th>
+        </tr>
+        
+        
+    </table>
+</div>
+</center>
+
+<script>
+    var studenttable=document.getElementById("studenttable")
+    var studentform=document.getElementById("studentform")
+        
+
+    function save(event){
+        
+
+        var name=document.getElementById("name")
+        var age=document.getElementById("age")
+        var gender=document.querySelector('input[name="gender"]:checked') //---> 'input[name="gender"]:checked'
+        var mail=document.getElementById("mail")
+        var course=document.getElementById("course")
+        
+        var newRow=document.createElement("tr")
+        newRow.innerHTML=`<td>${name.value}</td> 
+                          <td>${age.value}</td> 
+                          <td>${gender.value}</td>
+                          <td>${course.value}</td>
+                          <td>${mail.value}</td> 
+                          <td><button onclick="deletebutton(this)">Delete</button></td> ` //--->Use this Option
+        studenttable.append(newRow)
+    }
+    function deletebutton(btn){
+    // document.getElementById("studenttable").deleteRow(1) ---> Delete the first row
+    btn.parentNode.parentNode.remove()
+    }
+
+</script>    
+  
+
