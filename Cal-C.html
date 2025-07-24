@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color:rgba(80, 85, 85, 0.982);
+            width: 350px;
+            height: 450px;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+        button{
+            width: 70px;
+            height: 40px;
+            border-radius: 15px;
+            color:white ;
+            box-shadow:-8px -8px 15px rgba(25, 25, 25, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+            background-color:transparent ;
+        }
+        .operator{
+            color: aqua;
+        }
+        #inputbox{
+            text-align: end;
+        }
+    </style>
+
+</head>
+<center>
+<body style="background-color:black">
+    <div class="box">
+        <div>
+            <h2 style="padding-top: 50px;">CALCULATER</h2>
+            
+            <input type="text" id="inputbox" style="width: 70%;height: 50px;font-size: xx-large;border-color:darkslateblue;">
+        </div><br><br>
+        <div>
+            <table class="btn">
+                <tr>
+                    <td><button onclick="update()" class="operator">AC</button></td>   
+                    <td><button onclick="inputbox.value=inputbox.value.toString().slice(0,-1)" class="operator" >DE</button></td>
+                    <td><button onclick="inputbox.value +='.' " class="operator">.</button></td>
+                    <td><button onclick="inputbox.value +='+' " class="operator">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inputbox.value +='1' ">1</button></td>
+                    <td><button onclick="inputbox.value +='2' ">2</button></td>
+                    <td><button onclick="inputbox.value +='3' ">3</button></td>
+                    <td><button onclick="inputbox.value +='-' " class="operator">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inputbox.value +='4' " >4</button></td>
+                    <td><button onclick="inputbox.value +='5' ">5</button></td>
+                    <td><button onclick="inputbox.value +='6' ">6</button></td>
+                    <td><button onclick="inputbox.value +='*' " class="operator">x</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inputbox.value +='7' ">7</button></td>
+                    <td><button onclick="inputbox.value +='8' ">8</button></td>
+                    <td><button onclick="inputbox.value +='9' ">9</button></td>
+                    <td><button onclick="inputbox.value +='/' " class="operator">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="inputbox.value +='00' ">00</button></td>
+                    <td><button onclick="inputbox.value +='0' ">0</button></td>
+                    <td colspan="2"><button  style="width: 145px;" onclick="inputbox.value = eval(inputbox.value)" class="operator" >=</button></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</center>
+
+<script>
+    
+    function update(){
+        inputbox.value=""
+    }
+
+
+    
+</script>
+
+</body>
+</html>
